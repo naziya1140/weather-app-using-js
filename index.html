@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>weather app</title>
   <link rel="stylesheet" href="style.css">
-  <script src="initialScript.js"></script>
 </head>
 
 <body>
@@ -17,18 +16,21 @@
   <div class="orange-circle five"></div>
   <div class="orange-circle six"></div>
   <div class="orange-circle seven"></div>
-
+  
   <div class="content">
     <h2>Today</h2>
     <div class="search-box">
+
       <input type="text" name="place" id="search" placeholder="Enter your place">
+      <ul id="suggestions" class="suggestion-list"></ul>
+      
       <div class="scope">
         <button onclick="getWeather()">
           <img src="imgs/scope.png" alt="scope-img" id="scope-img">
         </button>
       </div>
     </div>
-
+    
     <div class="weather">
     
       <div class="temp">
@@ -39,22 +41,20 @@
       </div>
 
       <div class="details">
+        <div class="col">
 
-          <div class="col">
-
-            <div class="humidity-box">
-              <img src="imgs/dew-point_4867863.png" alt="humidity-icon" id="humidity-img">
-            </div>
-
-            <div>
-              <h2>Humidity</h2>
-              <h2 id="humidity">50%</h2>
-            </div>
+          <div class="humidity-box">
+            <img src="imgs/dew-point_4867863.png" alt="humidity-icon" id="humidity-img">
           </div>
+          
+          <div>
+            <h2>Humidity</h2>
+            <h2 id="humidity">50%</h2>
+          </div>
+        </div>
 
-          <div class="col">
-
-            <div class="wind-box">
+        <div class="col">
+          <div class="wind-box">
             <img src="imgs/vecteezy_hand-drawn-doodle-wind-blow-clip-art_22185109.png" alt="wind-icon" id="wind-img">
             </div>
 
@@ -62,9 +62,11 @@
               <h2>Wind Speed</h2>
               <h2 id="wind-speed">100km/h</h2>
             </div>
-
+            
           </div>
+        </div>
       </div>
-    </div>
-</body>
-</html>
+      
+      <script src="script/script.js"></script>
+    </body>
+    </html>
