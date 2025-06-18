@@ -1,4 +1,5 @@
 * {
+ font-family: "Lato", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -13,6 +14,18 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
+}
+
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .orange-circle {
@@ -124,17 +137,15 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   animation: fadeIn 1s ease-in;
 }
 
 #weather-img {
   height: 100px;
   width: 100px;
-  border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 #temperature {
@@ -216,4 +227,47 @@ h2 {
 .suggestion-list li:hover {
   background-color: #292323;
   color:white;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.attribute-box {
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 
+    inset 0 0 10px rgba(255, 255, 255, 0.05),
+    0 6px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 1s ease forwards;
+}
+
+.attribute-box:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  box-shadow: 
+    inset 0 0 10px rgba(255, 255, 255, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Special style for important box */
+.attribute-box.important {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(255, 87, 34, 0.4);
 }

@@ -29,13 +29,20 @@ function showWeather(position){
     fetch(apiUrl).
         then((response)=> {return response.json()})
         .then((data)=> {
-            console.log(data);
+            document.querySelector('#description').innerHTML= data.weather[0].description;
 
-            const weather = data;
-            document.querySelector("#city").innerHTML = weather.name;
-            document.querySelector("#temperature").innerHTML = weather.main.temp;
-            document.querySelector("#wind-speed").innerHTML = weather.wind.speed;
-            document.querySelector("#humidity").innerHTML = weather.main.humidity;
+            document.querySelector('#location').innerHTML= data.name;
+            document.querySelector("#temperature").innerHTML = data.main.temp;
+            document.querySelector("#wind-speed").innerHTML = data.wind.speed;
+            document.querySelector("#humidity").innerHTML = data.main.humidity;
+            document.querySelector('#grnd-level').innerHTML= data.main.grnd_level;
+            document.querySelector('#sea-level').innerHTML= data.main.sea_level;
+            document.querySelector('#min-temp').innerHTML= data.main.temp_max;
+            document.querySelector('#max-temp').innerHTML= data.main.temp_min;
+
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+            document.querySelector("#weather-img").src = iconUrl;
         })
         .catch((err)=>{
             console.log(err);

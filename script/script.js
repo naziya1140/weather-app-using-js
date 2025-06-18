@@ -46,7 +46,7 @@ search.addEventListener("input", async()=>{
 });
 
 
-function getWeather(cityname, ) {
+function getWeather(cityname ) {
     const city = cityname || document.querySelector("#search").value;
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=c36f4ca65dfd2a6048dbf1fe564d9e18`;
 
@@ -57,15 +57,24 @@ function getWeather(cityname, ) {
         })
         .then((data) => {
             console.log(data);
-            const weather = data;
-            document.querySelector('#location').innerHTML= 'Your Location'
-            document.querySelector("#city").innerHTML = weather.name;
-            document.querySelector("#temperature").innerHTML = weather.main.temp;
-            document.querySelector("#wind-speed").innerHTML = weather.wind.speed;
-            document.querySelector("#humidity").innerHTML = weather.main.humidity;
+
+            document.querySelector('#description').innerHTML= data.weather[0].description;
+
+            document.querySelector('#location').innerHTML= data.name;
+            document.querySelector("#temperature").innerHTML = data.main.temp;
+            document.querySelector("#wind-speed").innerHTML = data.wind.speed;
+            document.querySelector("#humidity").innerHTML = data.main.humidity;
+            document.querySelector('#grnd-level').innerHTML= data.main.grnd_level;
+            document.querySelector('#sea-level').innerHTML= data.main.sea_level;
+            document.querySelector('#min-temp').innerHTML= data.main.temp_max;
+            document.querySelector('#max-temp').innerHTML= data.main.temp_min;
+
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+            document.querySelector("#weather-img").src = iconUrl;
         })
         .catch((err) => {
             console.log(err);
-            alert("City not found. Please try again")
+            alert("City not found. Please try again");
         });
 }

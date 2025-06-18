@@ -7,6 +7,10 @@
   <title>weather app</title>
   <link rel="stylesheet" href="style.css">
   <script src="script/location.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Martel+Sans:wght@600&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -17,63 +21,64 @@
   <div class="orange-circle five"></div>
   <div class="orange-circle six"></div>
   <div class="orange-circle seven"></div>
-  
+
   <div class="content">
 
     <div class="location-box">
-    <h2 class="date-time"></h2>
-    <img src="imgs/location-pin.png" alt="location-icon" id="pin-img">
-    <h2 id="location"></h2>
+      <h2 class="date-time"></h2>
+      <div class="location-content">
+        <h2 id="location"></h2>
+      </div>
     </div>
 
     <div class="search-box">
-
       <input type="text" name="place" id="search" placeholder="Enter your place">
       <ul id="suggestions" class="suggestion-list"></ul>
-      
+
       <div class="scope">
         <button onclick="getWeather()">
           <img src="imgs/scope.png" alt="scope-img" id="scope-img">
         </button>
       </div>
     </div>
-    
+
     <div class="weather">
-    
+
       <div class="temp">
-        <img src="imgs/—Pngtree—sea waves and sun flat_12507082.jpg" alt="weather-icon" id="weather-img">
-        <h2>Temperature</h2>
+        <img id="weather-img" alt="Weather Icon" style="height:40px;vertical-align:middle;">
+        <h2 id="description">Temperature</h2>
         <h2 id="temperature">22.8</h2>
-        <h2 id="city">New York</h2>
       </div>
 
       <div class="details">
-        <div class="col">
-
-          <div class="humidity-box">
-            <img src="imgs/dew-point_4867863.png" alt="humidity-icon" id="humidity-img">
-          </div>
-          
-          <div>
-            <h2>Humidity</h2>
-            <h2 id="humidity">50%</h2>
-          </div>
+        <!-- Max temp, Min temp, humidity, precipitation, wind speed, sea level -->
+        <div class="attribute-box">Max Temp
+          <h3 id="max-temp"></h3>
         </div>
 
-        <div class="col">
-          <div class="wind-box">
-            <img src="imgs/vecteezy_hand-drawn-doodle-wind-blow-clip-art_22185109.png" alt="wind-icon" id="wind-img">
-            </div>
-
-            <div>
-              <h2>Wind Speed</h2>
-              <h2 id="wind-speed">100km/h</h2>
-            </div>
-            
-          </div>
+        <div class="attribute-box">Min Temp
+          <h3 id="min-temp"></h3>
         </div>
+
+        <div class="attribute-box">Ground Level
+          <h3 id="grnd-level"></h3>
+        </div>
+
+        <div class="attribute-box">Sea Level
+          <h3 id="sea-level"></h3>
+        </div>
+
+        <div class="attribute-box">humidity
+          <h3 id="humidity"></h3>
+        </div>
+
+        <div class="attribute-box">Wind Speed
+          <h3 id="wind-speed"></h3>
+        </div>
+
       </div>
 
       <script src="script/script.js"></script>
-    </body>
-    </html>
+</body>
+
+</html>
