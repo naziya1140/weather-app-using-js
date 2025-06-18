@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>weather app</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script/location.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,13 @@
   <div class="orange-circle seven"></div>
   
   <div class="content">
-    <h2>Today</h2>
+
+    <div class="location-box">
+    <h2 class="date-time"></h2>
+    <img src="imgs/location-pin.png" alt="location-icon" id="pin-img">
+    <h2 id="location"></h2>
+    </div>
+
     <div class="search-box">
 
       <input type="text" name="place" id="search" placeholder="Enter your place">
@@ -66,7 +73,7 @@
           </div>
         </div>
       </div>
-      
+
       <script src="script/script.js"></script>
     </body>
     </html>

@@ -46,7 +46,7 @@ search.addEventListener("input", async()=>{
 });
 
 
-function getWeather(cityname) {
+function getWeather(cityname, ) {
     const city = cityname || document.querySelector("#search").value;
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=c36f4ca65dfd2a6048dbf1fe564d9e18`;
 
@@ -58,6 +58,7 @@ function getWeather(cityname) {
         .then((data) => {
             console.log(data);
             const weather = data;
+            document.querySelector('#location').innerHTML= 'Your Location'
             document.querySelector("#city").innerHTML = weather.name;
             document.querySelector("#temperature").innerHTML = weather.main.temp;
             document.querySelector("#wind-speed").innerHTML = weather.wind.speed;

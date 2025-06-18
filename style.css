@@ -114,6 +114,12 @@ h2 {
   width: 20px;
 }
 
+#pin-img{
+    height: 20px;
+    width: 20px;
+    align-self: center;
+}
+
 .temp {
   display: flex;
   flex-direction: column;
@@ -192,7 +198,7 @@ h2 {
   padding: 0;
   background: linear-gradient(45deg, rgb(197, 197, 197), white);
   color: black;
-  max-height: 100px;
+  max-height: 160px;
   overflow-y: auto;
   position: absolute;
   top:90px;
