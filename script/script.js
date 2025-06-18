@@ -60,14 +60,15 @@ function getWeather(cityname ) {
 
             document.querySelector('#description').innerHTML= data.weather[0].description;
 
-            document.querySelector('#location').innerHTML= data.name;
-            document.querySelector("#temperature").innerHTML = data.main.temp;
-            document.querySelector("#wind-speed").innerHTML = data.wind.speed;
-            document.querySelector("#humidity").innerHTML = data.main.humidity;
-            document.querySelector('#grnd-level').innerHTML= data.main.grnd_level;
-            document.querySelector('#sea-level').innerHTML= data.main.sea_level;
-            document.querySelector('#min-temp').innerHTML= data.main.temp_max;
-            document.querySelector('#max-temp').innerHTML= data.main.temp_min;
+            document.querySelector('#location').innerHTML = `${data.name}`;
+            document.querySelector('#temperature').innerHTML = `${data.main.temp} °C`;
+            document.querySelector('#wind-speed').innerHTML = `${data.wind.speed} km/h`;
+            document.querySelector('#humidity').innerHTML = `${data.main.humidity} %`;
+            document.querySelector('#grnd-level').innerHTML = `${data.main.grnd_level} hPa`;
+            document.querySelector('#sea-level').innerHTML = `${data.main.sea_level} hPa`;
+            document.querySelector('#min-temp').innerHTML = `${data.main.temp_max} °C`;
+            document.querySelector('#max-temp').innerHTML = `${data.main.temp_min} °C`;
+
 
             const iconCode = data.weather[0].icon;
             const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
