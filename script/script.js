@@ -26,7 +26,7 @@ search.addEventListener("input", async()=>{
             
                 li.addEventListener("click", async()=>{
                     search.value= loc.name;                    
-                    li.textContent = `${loc.name}, ${loc.state || ''}, ${loc.country}`;
+                    li.textContent = `${loc.name}`;
                     suggestion.innerHTML= "";
                     getWeather(loc.name);
                 });
@@ -45,7 +45,7 @@ search.addEventListener("input", async()=>{
 });
 
 
-function getWeather(cityname ) {
+function getWeather(cityname) {
     const city = cityname || document.querySelector("#search").value;
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=c36f4ca65dfd2a6048dbf1fe564d9e18`;
 
@@ -72,6 +72,10 @@ function getWeather(cityname ) {
             const iconCode = data.weather[0].icon;
             const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
             document.querySelector("#weather-img").src = iconUrl;
+
+            let suggestion = document.querySelector("#suggestions");
+            suggestion.innerHTML="";
+
         })
         .catch((err) => {
             console.log(err);

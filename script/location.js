@@ -40,7 +40,6 @@ function showWeather(position){
             document.querySelector('#min-temp').innerHTML = `${data.main.temp_max} °C`;
             document.querySelector('#max-temp').innerHTML = `${data.main.temp_min} °C`;
 
-
             const iconCode = data.weather[0].icon;
             const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
             document.querySelector("#weather-img").src = iconUrl;
