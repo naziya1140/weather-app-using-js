@@ -5,7 +5,6 @@ let search = document.querySelector("#search");
 let suggestion = document.querySelector("#suggestions");
 
 search.addEventListener("input", async()=>{
-    
     const query = search.value.trim();
     
     //if the length of query goes beyond 2 then fetch all the matching values.

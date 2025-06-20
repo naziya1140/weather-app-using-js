@@ -1,84 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>weather app</title>
+  <title>Glass Weather App</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script/location.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Martel+Sans:wght@600&display=swap"
-    rel="stylesheet">
+  <script src="script/location.js" defer></script>
+  <script src="script/script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div class="orange-circle one"></div>
-  <div class="orange-circle two"></div>
-  <div class="orange-circle three"></div>
-  <div class="orange-circle four"></div>
-  <div class="orange-circle five"></div>
-  <div class="orange-circle six"></div>
-  <div class="orange-circle seven"></div>
+  <div class="bg-animation">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+  </div>
 
-  <div class="content">
+  <div class="glass-card">
+    <div class="top-info">
+      <h2 id="location">Location</h2>
+      <p class="datetime" id="date-time"></p>
+    </div>
 
-    <div class="location-box">
-      <h2 class="date-time"></h2>
-      <div class="location-content">
-        <h2 id="location"></h2>
-      </div>
+    <div class="weather-info">
+      <img id="weather-img" alt="Weather Icon" />
+      <h3 id="description">Weather Description</h3>
+      <h1 id="temperature">-- °C</h1>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-box"><p>Max Temp</p><h3 id="max-temp">-- °C</h3></div>
+      <div class="detail-box"><p>Min Temp</p><h3 id="min-temp">-- °C</h3></div>
+      <div class="detail-box"><p>Humidity</p><h3 id="humidity">-- %</h3></div>
+      <div class="detail-box"><p>Wind</p><h3 id="wind-speed">-- km/h</h3></div>
+      <div class="detail-box"><p>Ground Level</p><h3 id="grnd-level">-- hPa</h3></div>
+      <div class="detail-box"><p>Sea Level</p><h3 id="sea-level">-- hPa</h3></div>
     </div>
 
     <div class="search-box">
-      <input type="text" name="place" id="search" placeholder="Enter your place">
+      <input type="text" id="search" placeholder="Enter location...">
       <ul id="suggestions" class="suggestion-list"></ul>
-
-      <div class="scope">
-        <button onclick="getWeather()">
-          <img src="imgs/scope.png" alt="scope-img" id="scope-img">
-        </button>
-      </div>
+      <button onclick="getWeather()">Search</button>
     </div>
-
-    <div class="weather">
-
-      <div class="temp">
-        <img id="weather-img" alt="Weather Icon" style="height:40px;vertical-align:middle;">
-        <h2 id="description">Temperature</h2>
-        <h2 id="temperature">22.8</h2>
-      </div>
-
-      <div class="details">
-        <!-- Max temp, Min temp, humidity, precipitation, wind speed, sea level -->
-        <div class="attribute-box">Max Temp
-          <h3 id="max-temp"></h3>
-        </div>
-
-        <div class="attribute-box">Min Temp
-          <h3 id="min-temp"></h3>
-        </div>
-
-        <div class="attribute-box">Ground Level
-          <h3 id="grnd-level"></h3>
-        </div>
-
-        <div class="attribute-box">Sea Level
-          <h3 id="sea-level"></h3>
-        </div>
-
-        <div class="attribute-box">humidity
-          <h3 id="humidity"></h3>
-        </div>
-
-        <div class="attribute-box">Wind Speed
-          <h3 id="wind-speed"></h3>
-        </div>
-
-      </div>
-
-      <script src="script/script.js"></script>
+  </div>
 </body>
-
 </html>
